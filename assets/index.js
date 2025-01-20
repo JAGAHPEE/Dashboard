@@ -65,7 +65,7 @@
                 const payload = lastMessage.result.uplink_message.decoded_payload;
 
                 updateUI(payload);
-                updateTimestamp();  // Update timestamp on each data fetch
+                updateTimestamp(lastMessage);  // Update timestamp on each data fetch
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -84,10 +84,17 @@
                 updateMap(data.latitude, data.longitude);
             }
         };
-        const updateTimestamp = () => {
-            const now = new Date();
-            const timestamp = now.toLocaleString();  // This will format the date/time based on the user's locale
-            document.getElementById('last-update-time').textContent = `Last update: ${timestamp}`;
+        const updateTimestamp = (lastMessage) => {
+            // Assuming the timestamp is available in the lastMessage (e.g., lastMessage.timestamp or lastMessage.result.uplink_message.received_at)
+            const timestamp = lastMessage.result.uplink_message.received_at; // Replace with the correct field if different
+
+            if (timestamp) {
+                const date = new Date(timestamp);
+                const formattedTimestamp = date.toLocaleString();  // Format the timestamp as per the user's locale
+                document.getElementById('last-update-time').textContent = `Last update: ${formattedTimestamp}`;
+            } else {
+                console.error('Timestamp not found in the response');
+            }
         };
         // Initialize Map and Fetch Data
         initMap();

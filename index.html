@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ultraSmart Dashboard</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <!-- Last Update Timestamp -->
+
+    <h1>Sensor ID :
+        <span id="device-id">--</span>
+    </h1>
+    <div id="last-update-card">
+        <p id="last-update-time">--</p>
+    </div>
+    <br>
+    </br>
+    <div class="dashboard-container">
+        <!-- Bin Level Card -->
+        <div class="card" id="bin-level-card">
+            <h3>Bin Level</h3>
+            <span id="bin-level-value">--</span>
+        </div>
+
+        <!-- Battery Level Card -->
+        <div class="card" id="battery-level-card">
+            <h3>Battery Level</h3>
+            <div id="battery-container">
+                <div id="battery-level"></div>
+            </div>
+            <span id="battery-level-value">--%</span>
+        </div>
+
+        <!-- Distance Card -->
+        <div class="card" id="distance-card">
+            <h3>Distance</h3>
+            <span id="distance-value">--</span>
+        </div>
+
+        <!-- Temperature Card -->
+        <div class="card" id="temperature-card">
+            <h3>Temperature</h3>
+            <span id="temperature-value">--</span>
+        </div>
+
+        <!-- Location Card -->
+        <div class="card" id="location-card">
+            <h3>Location</h3>
+            <div id="map"></div>
+            <p id="location-coordinates" style="margin-top: 10px;">Coordinates: --</p>
+        </div>
+    </div>
+</body>

@@ -91,6 +91,6 @@
         };
         // Initialize Map and Fetch Data
         initMap();
-        document.querySelector('script[src="index.js"]').textContent.includes('initMap')
+        document.querySelector('script[src="assets/index.js"]').textContent.includes('initMap')
         setInterval(fetchData, 10000);
         fetchData();
